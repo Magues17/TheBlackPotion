@@ -3,10 +3,11 @@ import React, { useEffect } from 'react';
 
 
 function AboutUs() {
-  //adds google api inegration
+  //adds google api integration
   useEffect(() => {
     const googleMapScript = document.createElement('script');
-    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyApRiPhDF7UNsL1A4w1AvgzwAxLadfI1-I&callback=initMap`;
+    const apiKey = process.env.YOUR_API_KEY;
+    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
     googleMapScript.async = true;
     window.document.body.appendChild(googleMapScript);
 
