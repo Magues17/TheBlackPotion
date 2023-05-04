@@ -1,39 +1,41 @@
 import React from "react";
 import { useEffect } from "react";
 
-
 function AboutUs() {
   useEffect(() => {
-
-    const googleMapScript = document.createElement('script');
-    let apiKey = process.env.REACT_APP_TheBlackPotion_API_Key;
-    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
-    googleMapScript.async = true;
-    window.document.body.appendChild(googleMapScript);
-
-    window.initMap = () => {
-      const mapOptions = {
-        center: { lat: 29.4877755, lng: -98.5522303 },
-        zoom: 15,
-        mapTypeId: 'roadmap',
+    const delay = setTimeout(() => {
+      const googleMapScript = document.createElement('script');
+      let apiKey = process.env.REACT_APP_TheBlackPotion_API_Key;
+      googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+      googleMapScript.async = true;
+      window.document.body.appendChild(googleMapScript);
+  
+      window.initMap = () => {
+        const mapOptions = {
+          center: { lat: 29.4877755, lng: -98.5522303 },
+          zoom: 15,
+          mapTypeId: 'roadmap',
+        };
+  
+        const map = new window.google.maps.Map(document.getElementById('map'), mapOptions);
+  
+        const infowindow = new window.google.maps.InfoWindow({
+          content: "<h3>The Black Potion</h3><p>1900 Fredericksburg Rd Suite 101<br />San Antonio, TX, United States, Texas</p><p>Phone: (210) 369-8750<br />Email: potionllc@gmail.com</p>"
+        });
+  
+        const marker = new window.google.maps.Marker({
+          position: { lat: 29.4877755, lng: -98.5522303 },
+          map: map,
+          title: 'The Black Potion',
+        });
+  
+        infowindow.open(map, marker);
       };
-
-      const map = new window.google.maps.Map(document.getElementById('map'), mapOptions);
-
-      const infowindow = new window.google.maps.InfoWindow({
-        content: "<h3>The Black Potion</h3><p>1900 Fredericksburg Rd Suite 101<br />San Antonio, TX, United States, Texas</p><p>Phone: (210) 369-8750<br />Email: potionllc@gmail.com</p>"
-      });
-
-      const marker = new window.google.maps.Marker({
-        position: { lat: 29.4877755, lng: -98.5522303 },
-        map: map,
-        title: 'The Black Potion',
-      });
-
-      infowindow.open(map, marker);
-    };
-
+    }, 1000); // 1 second delay
+  
+    return () => clearTimeout(delay);
   }, []);
+  
 
   return (
 
@@ -97,6 +99,7 @@ function AboutUs() {
 
       </div>
     </div>
+
   );
 }
 
