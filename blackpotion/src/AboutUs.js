@@ -23,7 +23,11 @@ function AboutUs() {
         map: map,
         title: 'The Black Potion',
       });
-      marker.setMap(map);
+      const infowindow = new window.google.maps.InfoWindow({
+        content: "<h3>The Black Potion</h3><p>1900 Fredericksburg Rd Suite 101<br />San Antonio, TX, United States, Texas</p><p>Phone: (210) 369-8750<br />Email: potionllc@gmail.com</p>"
+      });
+      infowindow.open(map, marker);
+
     });
   }, []);
   return (
