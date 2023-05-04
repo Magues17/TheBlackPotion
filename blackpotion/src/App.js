@@ -8,13 +8,15 @@ import Games from "./Games";
 import Footer from "./Footer";
 
 function App() {
+  console.log("the key is: " + process.env.REACT_APP_MAP_KEY);
   return (
+    
     <Router>
-      <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <div class="navbar-brand">Black Potion</div>
+      <nav className="navbar navbar-expand-lg bg-light">
+        <div className="container-fluid">
+          <div className="navbar-brand">Black Potion</div>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -22,32 +24,32 @@ function App() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <Link class="nav-link" to="/">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link" to="/">
                   Home
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/aboutus">
+              <li className="nav-item">
+                <Link className="nav-link" to="/aboutus">
                   About
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/menu">
+              <li className="nav-item">
+                <Link className="nav-link" to="/menu">
                   Menu
                 </Link>
                 </li>
-                <li class="nav-item">
-                <Link class="nav-link" to="/games">
+                <li className="nav-item">
+                <Link className="nav-link" to="/games">
                   Games
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/contact">
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact">
                   Contact
                 </Link>
               </li>
@@ -56,7 +58,7 @@ function App() {
         </div>
       </nav>
 
-      <div class="content">
+      <div className="content">
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/aboutus" element={<AboutUs />} />
