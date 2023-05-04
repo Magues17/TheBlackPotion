@@ -1,5 +1,6 @@
-import "./App.css";
+// import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 import Home from "./Home";
 import Contact from "./Contact";
 import AboutUs from "./AboutUs";
@@ -8,9 +9,8 @@ import Games from "./Games";
 import Footer from "./Footer";
 
 function App() {
-  console.log("the key is: " + process.env.REACT_APP_MAP_KEY);
+ 
   return (
-    
     <Router>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
@@ -29,12 +29,7 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/aboutus">
+                <Link className="nav-link" aria-current="page" to="/aboutus">
                   About
                 </Link>
               </li>
@@ -42,8 +37,8 @@ function App() {
                 <Link className="nav-link" to="/menu">
                   Menu
                 </Link>
-                </li>
-                <li className="nav-item">
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/games">
                   Games
                 </Link>

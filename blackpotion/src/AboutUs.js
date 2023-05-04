@@ -1,55 +1,45 @@
-import React, { useEffect } from 'react';
-
+import React from "react";
+import { useEffect } from "react";
 
 
 function AboutUs() {
-  //adds google api integration
   useEffect(() => {
-    const loadMap = () => {
-      const googleMapScript = document.createElement('script');
-      let apiKey = process.env.REACT_APP_TheBlackPotion_API_Key;
-      googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
-      googleMapScript.async = true;
-      window.document.body.appendChild(googleMapScript);
 
-      window.initMap = () => {
-        const mapOptions = {
-          center: { lat: 29.4877755, lng: -98.5522303 },
-          zoom: 15,
-          mapTypeId: 'roadmap',
-        };
-        const map = new window.google.maps.Map(document.getElementById('map'), mapOptions);
+    const googleMapScript = document.createElement('script');
+    let apiKey = process.env.REACT_APP_TheBlackPotion_API_Key;
+    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+    googleMapScript.async = true;
+    window.document.body.appendChild(googleMapScript);
 
-        const infowindow = new window.google.maps.InfoWindow({
-          content: "<h3>The Black Potion</h3><p>1900 Fredericksburg Rd Suite 101<br />San Antonio, TX, United States, Texas</p><p>Phone: (210) 369-8750<br />Email: potionllc@gmail.com</p>"
-        });
-
-        const marker = new window.google.maps.Marker({
-          position: { lat: 29.4877755, lng: -98.5522303 },
-          map: map,
-          title: 'The Black Potion',
-        });
-       
-        infowindow.open(map, marker);
+    window.initMap = () => {
+      const mapOptions = {
+        center: { lat: 29.4877755, lng: -98.5522303 },
+        zoom: 15,
+        mapTypeId: 'roadmap',
       };
+
+      const map = new window.google.maps.Map(document.getElementById('map'), mapOptions);
+
+      const infowindow = new window.google.maps.InfoWindow({
+        content: "<h3>The Black Potion</h3><p>1900 Fredericksburg Rd Suite 101<br />San Antonio, TX, United States, Texas</p><p>Phone: (210) 369-8750<br />Email: potionllc@gmail.com</p>"
+      });
+
+      const marker = new window.google.maps.Marker({
+        position: { lat: 29.4877755, lng: -98.5522303 },
+        map: map,
+        title: 'The Black Potion',
+      });
+
+      infowindow.open(map, marker);
     };
 
-    if (!window.google) {
-      loadMap();
-    } else {
-      window.initMap();
-    }
   }, []);
-
-
-
 
   return (
 
     //ABOUT US HTML
     <div className="container-xl mt-5">
       <h1 className="text-center mb-4">About The Black Potion</h1>
-      {process.env.REACT_APP_Bacon}
       <div className="row">
         <div className="col-md-6 mb-5">
           <p>Located at 1900 Fredericksburg Rd Suite 101 in San Antonio, Texas, The Black Potion is a unique and exciting bar that offers a wide range of cocktails and drinks to suit all tastes. In addition to being a great place to grab a drink, The Black Potion is also a hub for board game enthusiasts. With a diverse selection of games and a welcoming atmosphere, our bar is the perfect destination for a night of fun with friends or family.</p>
