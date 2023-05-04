@@ -36,3 +36,36 @@ body {
     background-color: orange;
   
   }
+
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h1 {
+      font-size: 3rem;
+    }
+    
+    .lead {
+      font-size: 1.25rem;
+    }
+    
+    h3 {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+    
+    table {
+      margin-top: 1.5rem;
+      
+      td {
+        font-size: 1.25rem;
+        border-top: none;
+        
+        &:first-of-type {
+          width: 100px;
+        }
+      }
+    }
+  }
+  
