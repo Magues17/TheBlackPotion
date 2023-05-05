@@ -1,3 +1,13 @@
+$bg-footer: rgb(131, 131, 131);
+$bg-content:rgb(255, 255, 255);
+$bg-navbar:rgb(226, 226, 226);
+
+$white: white;
+$black: black;
+
+
+
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -21,20 +31,46 @@ body {
     width: 100%;
     height: 100vh;
   }
+
+  .navbar {
+    background-color: $bg-navbar;
+  }
   
   .content {
     overflow-y: auto;
     overflow-x: hidden;
     height: 70%;
     flex: 1 0 auto;
+    background-color: $bg-content;
   }
   
   .footer {
     flex-shrink: 0;
     width: 100%;
-    height: 3rem;
-    background-color: orange;
-  
+    font-size: .8rem;
+    display: flex;
+    flex-direction: row;
+    background-color: $bg-footer;
+    color: $white;
+
+    table {
+      color: $white;
+    }
+
+    &-title {
+      font-size: .8rem;
+      font-weight: bold;
+    }
+
+    &-logo {
+      width: 35%;
+      height: auto;
+    }
+
+    &-location{
+      color:$black;
+    }
+    
   }
 
 

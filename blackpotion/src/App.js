@@ -1,18 +1,18 @@
 // import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import Home from "./Home";
-import Contact from "./Contact";
-import AboutUs from "./AboutUs";
-import Menu from "./Menu";
-import Games from "./Games";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
+import AboutUs from "./components/AboutUs";
+import Menu from "./components/Menu";
+import Games from "./components/Games";
 import Footer from "./Footer";
 
 function App() {
  
   return (
     <Router>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <div className="navbar-brand">Black Potion</div>
           <button

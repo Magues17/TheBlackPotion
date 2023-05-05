@@ -27,6 +27,10 @@ function AboutUs() {
           position: { lat: 29.4877755, lng: -98.5522303 },
           map: map,
           title: 'The Black Potion',
+          icon: {
+            url: 'http://maps.google.com/mapfiles/ms/icons/bar.png',
+            scaledSize: new window.google.maps.Size(40, 40)
+          }
         });
   
         infowindow.open(map, marker);
