@@ -60,7 +60,7 @@ function Footer() {
           <div className="footer-title">
             About
           </div>
-          <img className="footer-logo mt-2" src={footerLogo} />
+          <img className="footer-logo mt-2" src={footerLogo} alt="" />
           <div className="mt-2">
             The Black Potion is a unique bar in San Antonio that offers a diverse selection of cocktails and is a hub for board game enthusiasts. Our goal is to create a welcoming atmosphere where customers can relax and enjoy a night out.
           </div>
