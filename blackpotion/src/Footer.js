@@ -110,7 +110,7 @@ function Footer() {
           <div className="footer-title">
             Location
           </div>
-          <div className="mt-2 footer-location" id="mapSmall" style={{ height: "250px" }}></div>
+          <div className="mt-2 footer-location" id="mapSmall" style={{ height: "200px" }}></div>
         </div>
 
         {/* Contact */}

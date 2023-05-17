@@ -38,7 +38,7 @@ code {
 .footer {
   flex-shrink: 0;
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   display: flex;
   flex-direction: row;
   background-color: rgb(131, 131, 131);
@@ -77,9 +77,29 @@ code {
   margin-top: 1.5rem;
 }
 .container table td {
-  font-size: 1.25rem;
+  font-size: 0.85rem;
   border-top: none;
 }
 .container table td:first-of-type {
   width: 100px;
+}
+
+table > :not(caption) > * > * {
+  padding: 0.1rem 0.1rem !important;
+  border-bottom-width: 0px !important;
+}
+
+.carousel {
+  background-color: rgb(131, 131, 131);
+}
+.carousel-item {
+  flex-direction: row;
+  justify-content: center;
+}
+.carousel-item.active {
+  display: flex !important;
+}
+.carousel-img {
+  height: 760px;
+  width: 1440px;
 }/*# sourceMappingURL=index.css.map */

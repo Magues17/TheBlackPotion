@@ -9,12 +9,13 @@ import Games from "./components/Games";
 import Footer from "./Footer";
 
 function App() {
- 
   return (
     <Router>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <div className="navbar-brand">Black Potion</div>
+          <Link className="nav-link navbar-brand" aria-current="page" to="/">
+            Black Potion
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
